@@ -25,11 +25,11 @@ public class LibaryEmail {
     private static LibaryStoreData libaryStoreData;
     private static Model model;
 
-    public static void sendEmail(Context c, String subject, String message, boolean showProgressBar) {
+    public static void sendEmail(Context c, String subject, String message, boolean showProgressBar,boolean showSuccessToast) {
         //Getting content for toEmail
         progress = new ProgressDialog(c);
         libaryStoreData = new LibaryStoreData(c);
-        model = new Model(subject,message,c,showProgressBar);
+        model = new Model(subject,message,c,showProgressBar,showSuccessToast);
 
         if (libaryStoreData.getEmailAndPassword(LibaryStoreData.TOEMAIL).equals("") ||
                 libaryStoreData.getEmailAndPassword(LibaryStoreData.FROMPASSWORD).equals("") ||
@@ -71,11 +71,13 @@ public class LibaryEmail {
     static class RetriveFeedTask extends AsyncTask<Model, Void, Void> {
         Context c;
         boolean showProgress = true;
+        boolean showToast = true;
 
         @Override
         protected Void doInBackground(Model... strings) {
             try {
                 showProgress = strings[0].getProgressBar();
+                showToast = strings[0].isShowToast();
                 c = strings[0].getContext();
                 MimeMessage message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(senderEmail));
@@ -97,7 +99,9 @@ public class LibaryEmail {
             if(showProgress){
                 progress.dismiss();
             }
-            Toast.makeText(c, "LibaryEmail Sent", Toast.LENGTH_SHORT).show();
+            if(showToast){
+                Toast.makeText(c, "Email Sent", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

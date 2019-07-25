@@ -20,7 +20,7 @@ public class Main extends AppCompatActivity {
                     try {
                         throw new RuntimeException("RuntimeException Error");
                     } catch (Exception e) {
-                        SendingErrorLog(e, this, false);
+                        SendingErrorLog(e, this, true,false);
                     }
                 }
         );

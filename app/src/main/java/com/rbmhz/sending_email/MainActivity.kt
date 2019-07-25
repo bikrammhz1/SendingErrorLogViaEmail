@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 throw RuntimeException("RuntimeException Error")
             } catch (e: Exception) {
-                SendingErrorLog(e,this,false)
+                SendingErrorLog(e,this,false,false)
             }
         }
     }

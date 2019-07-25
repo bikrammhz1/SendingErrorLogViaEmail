@@ -7,12 +7,18 @@ public class Model {
     String Body;
     Context context;
     boolean ShowProgressBar;
+    boolean ShowToast;
 
-    public Model(String title, String body, Context context,boolean showProgressBar) {
+    public Model(String title, String body, Context context,boolean showProgressBar,boolean showToast) {
         Title = title;
         Body = body;
         ShowProgressBar = showProgressBar;
+        ShowToast = showToast;
         this.context = context;
+    }
+
+    public boolean isShowToast() {
+        return ShowToast;
     }
 
     public boolean getProgressBar() {
