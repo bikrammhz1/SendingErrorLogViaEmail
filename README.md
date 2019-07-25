@@ -3,7 +3,9 @@
 # In Kotlin
 1)  var libaryStoreData = LibaryStoreData(this)
 2)  libaryStoreData?.saveLibaryRequiredData("senderEmail@gmail.com", "senderPassword", "receiverEmail")
+
 eg:-
+
             try {
             
                 throw RuntimeException("RuntimeException Error")
@@ -17,7 +19,9 @@ eg:-
 # In Java
 1)  LibaryStoreData  libaryStoreData = new LibaryStoreData(this);
 2)  libaryStoreData.saveLibaryRequiredData("senderEmail@gmail.com", "senderPassword", "receiverEmail");
-eg:-          
+
+eg:-      
+
              try {
              
                  throw new RuntimeException("RuntimeException Error");
