@@ -20,7 +20,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.bikrammhz1:SendingErrorLogViaEmail:1.0'
+	        implementation 'com.github.bikrammhz1:SendingErrorLogViaEmail:1.1'
 	}
             
 # In Kotlin
@@ -35,7 +35,7 @@ eg:-
                 
             } catch (e: Exception) {
             
-                SendingErrorLog(e,this,false)
+                SendingErrorLog(e,this,false,false)
                 
             }
             
@@ -51,7 +51,7 @@ eg:-
                  
                } catch (Exception e) {
                
-                  SendingErrorLog(e, this, false);
+                  SendingErrorLog(e, this, false,true);
                   
                }
       
