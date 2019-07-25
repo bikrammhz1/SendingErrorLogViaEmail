@@ -7,12 +7,11 @@ import com.rbmhz.library.SendingErrorLog.SendingErrorLog
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    var libaryStoreData: LibaryStoreData? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        libaryStoreData = LibaryStoreData(this)
+        var libaryStoreData =  LibaryStoreData(this)
         libaryStoreData?.saveLibaryRequiredData("senderEmail@gmail.com", "senderPassword", "receiverEmail")
         btn_send.setOnClickListener {
             try {
